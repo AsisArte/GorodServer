@@ -1,0 +1,80 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.kart{
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.blocks{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+img{
+  object-fit: cover;
+  width: 400px; 
+  height: 350px;
+}
+
+.on_top{
+  position: relative;
+  margin-top: -88%;
+  opacity: 0;
+}
+
+.on_top:hover{
+  transform: scale(1.1);
+  opacity: 1;
+  transition: 1s;
+}
+
+.blocks{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* filtr */
+input[type="radio"] {
+    display:none;
+}
+.blocks label {
+  width:23%;
+  float:left;
+  text-align:center;
+  background:#ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color:#222222;
+  padding:0.5%;
+  margin:0.5%;
+  margin-bottom:30px;
+  cursor:pointer;
+}
+input[type="radio"][id="new"]:checked + label {
+  background:#FEBA77;
+}
+input[type="radio"][id="new"]:checked ~ .solved, input[type="radio"][id="new"]:checked ~ .rejected {
+  display:none;
+}
+input[type="radio"][id="solved"]:checked + label {
+  background:#5BC2B1;
+}
+input[type="radio"][id="solved"]:checked ~ .new, input[type="radio"][id="solved"]:checked ~ .rejected {
+  display:none;
+}
+input[type="radio"][id="rejected"]:checked + label {
+  background:#F56551;
+}
+input[type="radio"][id="rejected"]:checked ~ .new, input[type="radio"][id="rejected"]:checked ~ .solved {
+  display:none;
+}
